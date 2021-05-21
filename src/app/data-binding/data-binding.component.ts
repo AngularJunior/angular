@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
   styleUrls: ['./data-binding.component.css']
-  
+
 })
 export class DataBindingComponent implements OnInit {
 
@@ -17,6 +17,7 @@ export class DataBindingComponent implements OnInit {
   isMouseOver: boolean = false;
 
   nomeDoCurso: string = 'Angular';
+  valorInicial = 15;
 
   getValor() {
     return 1;
@@ -42,13 +43,17 @@ export class DataBindingComponent implements OnInit {
     this.isMouseOver = !this.isMouseOver;
   }
 
+  onMudouValor(evento: any) {
+    console.log(evento.novoValor);
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
-function value(arg0: HTMLInputElement, value: any) {
-  throw new Error('Function not implemented.');
-}
+// function value(arg0: HTMLInputElement, value: any) {
+//   throw new Error('Function not implemented.');
+// }
 
